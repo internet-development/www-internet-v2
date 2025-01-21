@@ -1,0 +1,39 @@
+.flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: calc(var(--theme-line-height-base) * 1rem) 0 calc(var(--theme-line-height-base) * 1rem) 0;
+
+  background: var(--theme-border-subdued);
+
+  &:hover {
+    background: var(--theme-focused-foreground);
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  user-select: none;
+  cursor: pointer;
+  font-size: var(--font-size);
+  align-self: stretch;
+}
+
+.content {
+  min-width: 10%;
+  width: 100%;
+  user-select: none;
+  cursor: pointer;
+  transition: 200ms ease all;
+  transition-property: padding;
+  padding-left: 0ch;
+}
+
+.active {
+  .content {
+    padding-left: 1ch;
+  }
+
+  .icon {
+  }
+}

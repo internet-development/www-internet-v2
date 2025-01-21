@@ -1,0 +1,50 @@
+.row {
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.column {
+  max-width: 768px;
+  padding: 0 24px 0 24px;
+  margin: 0 auto 0 auto;
+  display: block;
+  border-left: 1px solid var(--theme-border);
+  border-right: 1px solid var(--theme-border);
+}
+
+.video {
+  display: block;
+  width: 100%;
+}
+
+.h1 {
+  display: block;
+  line-height: calc(var(--theme-line-height-base) * 1rem);
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+
+.p {
+  display: block;
+  line-height: calc(var(--theme-line-height-base) * 1rem);
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+
+.aside {
+  display: block;
+  line-height: calc(var(--theme-line-height-base) * 1rem);
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+
+.h2 {
+  display: block;
+  line-height: calc(var(--theme-line-height-base) * 1rem);
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
