@@ -87,7 +87,7 @@ export default async function Page(props) {
             United States of America, Earth
           </aside>
           <br />
-          <p className={styles.p}>An american vocation guild and great hall for webmasters. Every day we practice the craft of designing, building, shipping, and maintaining websites, platforms, brands, and applications—end to end.</p>
+          <p className={styles.p}>An American vocational guild and great hall for webmasters. Every day we practice the craft of designing, building, shipping, and maintaining websites, platforms, brands, and applications—end to end.</p>
           <br />
           <br />
           <br />
