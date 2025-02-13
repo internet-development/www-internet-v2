@@ -112,13 +112,15 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="https://www.beautifulthings.xyz/" target="_blank">
             Look at beautiful things
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://diagram.page/charts" target="_blank">
+            Make a diagram
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
             Manage your account
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://txt.dev" target="_blank">
             Write a post
           </ActionListItem>
-
           <br />
           <br />
           <br />
@@ -706,6 +708,9 @@ export default async function Page(props) {
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
             Manage your account
+          </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://diagram.page/charts" target="_blank">
+            Make a diagram
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://txt.dev/wwwjim/intdev-acceptable-use" target="_blank">
             Read our Acceptable Use Policy

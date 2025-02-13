@@ -199,6 +199,9 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="/">
             Go home
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://diagram.page/charts" target="_blank">
+            Make a diagram
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
             Manage your account
           </ActionListItem>
