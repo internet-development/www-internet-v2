@@ -9,6 +9,7 @@ import Canvas from '@components/Canvas';
 import DefaultLayout from '@components/page/DefaultLayout';
 import InternetDevelopmentLogo from '@components/svg/InternetDevelopmentLogo';
 import InternetDevelopmentLogoMark from '@components/svg/InternetDevelopmentLogoMark';
+import InternetDevelopmentArtsCraftsLogo from '@components/svg/InternetDevelopmentArtsCraftsLogo';
 import Table from '@components/Table';
 import TableRow from '@components/TableRow';
 import TableColumn from '@components/TableColumn';
@@ -652,7 +653,20 @@ export default async function Page(props) {
           Use this SVG for a logo without the word “INTDEV.”
           <br />
           <br />
-          <InternetDevelopmentLogoMark height="48px" />
+          <InternetDevelopmentLogoMark height="47px" />
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
+
+      <div className={styles.row}>
+        <div className={styles.column}>
+          <br />
+          Use this SVG for when you're hosting an event at our studio.
+          <br />
+          <br />
+          <InternetDevelopmentArtsCraftsLogo height="50.5px" />
           <br />
           <br />
           <br />
