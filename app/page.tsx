@@ -18,7 +18,7 @@ import styles from '@components/page/root.module.scss';
 
 export const dynamic = 'force-static';
 
-const VIDEO_URL = 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/03025ac3-aa78-4a21-ac3c-a465cb792d39.mp4';
+const VIDEO_URL = 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/1bcf31f2-74f4-4e68-a558-44138d9c0c27.mp4';
 
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
