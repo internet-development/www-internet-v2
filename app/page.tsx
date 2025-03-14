@@ -179,7 +179,7 @@ export default async function Page(props) {
           <br />
           <Accordion defaultValue={true} title={`Who is INTDEV working for in 2025?`}>
             <br />
-            Microsoft
+            Microsoft, Discord, and various startups.
             <br />
             <br />
             <br />
@@ -643,6 +643,16 @@ export default async function Page(props) {
             <br />
             <br /> <br />
           </Accordion>
+          <br />
+        </div>
+      </div>
+
+      <div className={styles.row}>
+        <div className={styles.column}>
+          <br />
+          Download our wallpaper <a href="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/ba46c8e0-d47a-46f1-8174-f0404a3b8d02.jpeg" target="_blank">here</a>.
+          <br />
+          <br />
           <br />
         </div>
       </div>
