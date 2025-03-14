@@ -650,7 +650,7 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          Download our wallpaper <a href="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/ba46c8e0-d47a-46f1-8174-f0404a3b8d02.jpeg" target="_blank">here</a>.
+          Download our wallpaper <a href="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/4d44a15b-eec6-46a8-8c96-0ad5d51f0924.jpeg" target="_blank">here</a>.
           <br />
           <br />
           <br />
