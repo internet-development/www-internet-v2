@@ -1,0 +1,113 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+  padding: 16px 16px 20dvh 16px;
+  overflow-x: hidden;
+  z-index: 1;
+
+  @media (max-width: 1440px) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  transition: 180ms ease all;
+  transform: scale(1);
+  transform-origin: top center;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.025);
+    z-index: 2;
+  }
+
+  &:active {
+    box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.6);
+    transform: scale(1.5);
+  }
+
+  &:nth-child(8n + 1) {
+    transform-origin: top left;
+  }
+  &:nth-child(8n) {
+    transform-origin: top right;
+  }
+
+  @media (max-width: 1024px) {
+    &:nth-child(8n + 1) {
+      transform-origin: top center;
+    }
+    &:nth-child(8n) {
+      transform-origin: top center;
+    }
+    &:nth-child(6n + 1) {
+      transform-origin: top left;
+    }
+    &:nth-child(6n) {
+      transform-origin: top right;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &:nth-child(8n + 1) {
+      transform-origin: top center;
+    }
+    &:nth-child(8n) {
+      transform-origin: top center;
+    }
+    &:nth-child(6n + 1) {
+      transform-origin: top center;
+    }
+    &:nth-child(6n) {
+      transform-origin: top center;
+    }
+    &:nth-child(4n + 1) {
+      transform-origin: top left;
+    }
+    &:nth-child(4n) {
+      transform-origin: top right;
+    }
+  }
+}
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: 'Times New Roman', serif;
+  border-top: 1px solid var(--theme-border);
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.context {
+  flex-shrink: 0;
+  width: 25%;
+  padding: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-style: italic;
+
+  @media (max-width: 1024px) {
+    width: 12.66667%;
+  }
+
+  @media (max-width: 768px) {
+    width: 25%;
+    font-size: 0.65rem;
+  }
+}
