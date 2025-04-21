@@ -1,5 +1,5 @@
 const nextConfig = {
-  devIndicators: false
-}
- 
-module.exports = nextConfig
+  devIndicators: false,
+};
+
+module.exports = nextConfig;

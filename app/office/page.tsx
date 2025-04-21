@@ -178,6 +178,9 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="https://wireframes.internet.dev/" target="_blank">
             Explore INTDEV's open source work
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://bsky.app/profile/internetstudio.bsky.social" target="_blank">
+            Follow us on Bluesky
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://github.com/orgs/internet-development/repositories" target="_blank">
             Follow us on GitHub
           </ActionListItem>
@@ -198,6 +201,9 @@ export default async function Page(props) {
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="/">
             Go home
+          </ActionListItem>
+          <ActionListItem icon={`⊹`} href="/cards" target="_blank">
+            Look at flag posts
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://diagram.page/charts" target="_blank">
             Make a diagram

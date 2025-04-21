@@ -96,18 +96,17 @@
 
 .context {
   flex-shrink: 0;
-  width: 25%;
+  width: 37.5%;
   padding: 16px;
   font-size: 0.8rem;
   line-height: 1.2;
   font-style: italic;
 
-  @media (max-width: 1024px) {
-    width: 12.66667%;
+  @media (max-width: 1280px) {
+    width: 25%;
   }
 
   @media (max-width: 768px) {
-    width: 25%;
     font-size: 0.65rem;
   }
 }

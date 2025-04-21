@@ -180,7 +180,7 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
       style={{
         minWidth: '10%',
         width: '100%',
-        height: '96vh',
+        height: 'calc(100dvh - 40px)',
         margin: 0,
         padding: 0,
       }}

@@ -20,8 +20,8 @@ export const dynamic = 'force-static';
 const VIDEO_URL = 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/03025ac3-aa78-4a21-ac3c-a465cb792d39.mp4';
 
 export async function generateMetadata({ params, searchParams }) {
-  const title = `${Package.name} - NOTES`;
-  const description = `Learn about the mission of the Internet Development Studio Company`;
+  const title = `${Package.name} - NOTES - Q1 2025`;
+  const description = `Learn more about the mission of the Internet Development Studio Company and how we did in Q1 2025.`;
   const url = 'https://internet.dev/notes';
   const handle = '@internetxstudio';
 
@@ -36,7 +36,7 @@ export async function generateMetadata({ params, searchParams }) {
       description,
       images: [
         {
-          url: 'https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png',
+          url: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/c5afa1ee-fb02-4af0-94e5-a476e9eac06b.png',
           width: 1500,
           height: 785,
         },
@@ -50,7 +50,7 @@ export async function generateMetadata({ params, searchParams }) {
       card: 'summary_large_image',
       description,
       handle,
-      images: ['https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png'],
+      images: ['https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/c5afa1ee-fb02-4af0-94e5-a476e9eac06b.png'],
       title,
       url,
     },
@@ -74,13 +74,36 @@ export default async function Page(props) {
           <div style={{ textAlign: 'right' }}>
             <P>INTERNET DEVELOPMENT STUDIO COMPANY ("INTDEV")</P>
             <P>PIKE PLACE, SEATTLE, WASHINGTON</P>
-            <P>SPRING 2025</P>
+            <P>Q1 SPRING 2025</P>
             <P>PUBLIC NOTES FROM YOUR JANITOR</P>
+            <P>
+              [
+              <a href="https://txt.dev/wwwjim/internet-development-studio-company-q1" target="_blank">
+                2024-Q1
+              </a>
+              ,{' '}
+              <a href="https://txt.dev/wwwjim/internet-development-studio-company-q2" target="_blank">
+                2024-Q2
+              </a>
+              ,{' '}
+              <a href="https://txt.dev/wwwjim/internet-development-studio-company-q3" target="_blank">
+                2024-Q3
+              </a>
+              ,{' '}
+              <a href="https://txt.dev/wwwjim/internet-development-studio-company-q4" target="_blank">
+                2024-Q4
+              </a>
+              ,{' '}
+              <a href="https://flagpost.org" target="_blank">
+                FLAGPOST.ORG
+              </a>
+              ]
+            </P>
           </div>
           <br />
           <br />
           <br />
-          <P>You are reading public notes from the janitor at the Internet Development Studio Company of Seattle, WA. This reflection on Q1 2025 is addressed to my team and future employees.</P>
+          <P>You are reading public notes from the janitor at the Internet Development Studio Company of Seattle, WA. This reflection on the first quarter of 2025 is addressed to my team and future employees. This is INTDEV's fifth report since its formation.</P>
           <br />
           <br />
           <br />
@@ -203,6 +226,9 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="https://wireframes.internet.dev/" target="_blank">
             Explore INTDEV's open source work
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://bsky.app/profile/internetstudio.bsky.social" target="_blank">
+            Follow us on Bluesky
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://github.com/orgs/internet-development/repositories" target="_blank">
             Follow us on GitHub
           </ActionListItem>
@@ -223,6 +249,9 @@ export default async function Page(props) {
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="/">
             Go home
+          </ActionListItem>
+          <ActionListItem icon={`⊹`} href="/cards" target="_blank">
+            Look at flag posts
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://diagram.page/charts" target="_blank">
             Make a diagram

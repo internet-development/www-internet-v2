@@ -10,8 +10,8 @@ import Package from '@root/package.json';
 export const dynamic = 'force-static';
 
 export async function generateMetadata({ params, searchParams }) {
-  const title = `${Package.name} - CARDS`;
-  const description = `144`;
+  const title = `144`;
+  const description = `A story about people, craft, and friendship`;
   const url = 'https://flagpost.org/cards';
   const handle = '@internetxstudio';
 
@@ -26,7 +26,7 @@ export async function generateMetadata({ params, searchParams }) {
       description,
       images: [
         {
-          url: 'https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png',
+          url: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5d27fe6c-3354-4b4a-834f-460b41ca4dce.png',
           width: 1500,
           height: 785,
         },
@@ -40,7 +40,7 @@ export async function generateMetadata({ params, searchParams }) {
       card: 'summary_large_image',
       description,
       handle,
-      images: ['https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png'],
+      images: ['https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5d27fe6c-3354-4b4a-834f-460b41ca4dce.png'],
       title,
       url,
     },

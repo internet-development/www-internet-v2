@@ -130,9 +130,9 @@ const backgroundFragmentShader = `
 `;
 
 const IMAGE_SOURCE = `https://assets.flagpost.org`;
-const BACKGROUND_IMAGE = `/bg.png`;
+const BACKGROUND_IMAGE = `/bg.jpg`;
 
-const CARDS = [{ id: 0 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }, { id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }, { id: 14 }, { id: 15 }, { id: 16 }, { id: 17 }, { id: 18 }, { id: 19 }, { id: 20 }, { id: 21 }, { id: 22 }, { id: 23 }, { id: 24 }, { id: 25 }, { id: 26 }, { id: 27 }, { id: 28 }].reverse();
+const CARDS = [{ id: 0 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }, { id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }, { id: 14 }, { id: 15 }, { id: 16 }, { id: 17 }, { id: 18 }, { id: 19 }, { id: 20 }, { id: 21 }, { id: 22 }, { id: 23 }, { id: 24 }, { id: 25 }, { id: 26 }, { id: 27 }, { id: 28 }, { id: 29 }, { id: 30 }, { id: 31 }].reverse();
 
 export default function FlagSimulationPage(props) {
   const [currentTextureId, setCurrentTextureId] = React.useState(CARDS[0].id);
@@ -149,7 +149,7 @@ export default function FlagSimulationPage(props) {
           <br />
           <br />
           This project is a gathering of kindred souls in the Pacific Northwest—individuals whose dedication to imaginative labor reminds us of what a beautiful world might look like. Once we upload 144 flags, the full collection will be transformed by{' '}
-          <a href="/" target="_blank">
+          <a href="https://internet.dev" target="_blank">
             The Internet Development Studio Company (“INTDEV”)
           </a>{' '}
           into a set of trading cards.
@@ -159,7 +159,7 @@ export default function FlagSimulationPage(props) {
           <br />
           <br />
           In the summer of 2024,{' '}
-          <a href="/" target="_blank">
+          <a href="https://internet.dev" target="_blank">
             INTDEV
           </a>{' '}
           opened its studio in the heart of downtown—a kind of beacon. We then invited others to work, to dream, and to push their creative life toward its highest expression. Thank you for hearing that call, and for being part of this time in our lives.

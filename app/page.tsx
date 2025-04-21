@@ -113,6 +113,9 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="https://www.beautifulthings.xyz/" target="_blank">
             Look at beautiful things
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="/cards" target="_blank">
+            Look at flag posts
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://diagram.page/charts" target="_blank">
             Make a diagram
           </ActionListItem>
@@ -733,6 +736,9 @@ export default async function Page(props) {
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="/office">
             Learn more about the Pike Place office
+          </ActionListItem>
+          <ActionListItem icon={`⊹`} href="/cards" target="_blank">
+            Look at flag posts
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
             Manage your account
