@@ -121,7 +121,7 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/cbc5be6d-f687-4f57-8974-ebcacef76415.png" />
+          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6c2284a0-7736-451c-b76b-aabef03eb8d2.jpeg" />
           <br />
           <br />
         </div>
