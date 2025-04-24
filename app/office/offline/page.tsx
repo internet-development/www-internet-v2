@@ -20,9 +20,9 @@ export const dynamic = 'force-static';
 const VIDEO_URL = 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/03025ac3-aa78-4a21-ac3c-a465cb792d39.mp4';
 
 export async function generateMetadata({ params, searchParams }) {
-  const title = `${Package.name} - OFFICE`;
-  const description = `Learn more about our Office in Pike Place, Seattle`;
-  const url = 'https://internet.dev/office';
+  const title = `${Package.name} - OFFLINE`;
+  const description = `Learn about our invite only, food, provisions and coffee space.`;
+  const url = 'https://internet.dev/office/offline';
   const handle = '@internetxstudio';
 
   return {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params, searchParams }) {
       description,
       images: [
         {
-          url: 'https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png',
+          url: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/9b5184e1-291a-453a-ad07-3a54b15d3bbc.jpeg',
           width: 1500,
           height: 785,
         },
@@ -50,7 +50,7 @@ export async function generateMetadata({ params, searchParams }) {
       card: 'summary_large_image',
       description,
       handle,
-      images: ['https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png'],
+      images: ['https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/9b5184e1-291a-453a-ad07-3a54b15d3bbc.jpeg'],
       title,
       url,
     },
@@ -70,15 +70,9 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <InternetDevelopmentLogo height="24px" />
+          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6587b41a-e2e3-442e-ae33-38ce63565609.png" />
           <br />
           <br />
-        </div>
-      </div>
-
-      <div className={styles.row}>
-        <div className={styles.column}>
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/7e6088bb-4ce2-47d9-9dfd-d658faed484d.png" />
         </div>
       </div>
 
@@ -93,7 +87,7 @@ export default async function Page(props) {
             United States of America, Earth
           </aside>
           <br />
-          <p className={styles.p}>We invite builders who love trying new things and learning to collaborate with us, guided by our values: everything matters, support your friends, and doing your best is more than enough.</p>
+          <p className={styles.p}>The Internet Development Studio Company (“INTDEV”) is home to a lot of really, really cool baristas, chefs, and foragers. So, we sometimes host a private, invite-only coffee session and pop-up food sessions for guests and collaborators of the studio here in Seattle, WA.</p>
           <br />
           <br />
           <br />
@@ -103,7 +97,23 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/0bc8d758-d4a9-412e-aa28-1fa6e6481a9a.jpg" />
+          <aside className={styles.aside}>MENU</aside>
+          <br />
+          <p className={styles.p}>
+            We’ll make whatever we feel like making with what we got—
+            <br />
+            <br />
+            - 2x original Blackstone 28-inch burners
+            <br />
+            - 1x i-STEEL flat burr coffee grinder (54mm, Inox)
+            <br />
+            - 1x Ascaso Steel DUO PLUS PID programmable espresso machine with volumetric control and dual thermoblocks (120V, Inox)
+            <br />
+            - Coffee beans from a mix of local and international roasters.
+            <br />- Ingredients from local farms and butchers.
+          </p>
+          <br />
+          <br />
           <br />
         </div>
       </div>
@@ -111,23 +121,8 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <Accordion defaultValue={true} title={`What does the INTDEV office offer?`}>
-            <br />
-            Our space offers hardwood floors, symmetrical fiber internet, a local area network, two full kitchens, three meeting booths, a server room, lunch tables, and dedicated workstations. With 24/7 access and amenities like a color printer, shredder, scanner, gallery lounge, and triple-filtered water, we foster a collaborative environment where you can build your vision alongside like-minded peers.
-            <br />
-            <br />
-            <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
-              Apply on Users Garden
-            </ActionListItem>
-            <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
-              Manage your account
-            </ActionListItem>
-            <ActionListItem icon={`⊹`} href="https://txt.dev/wwwjim/office-use-agreement" target="_blank">
-              Read our Office Use Agreement
-            </ActionListItem>
-            <br />
-            <br /> <br />
-          </Accordion>
+          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/cbc5be6d-f687-4f57-8974-ebcacef76415.png" />
+          <br />
           <br />
         </div>
       </div>
@@ -135,39 +130,11 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6dcedf7d-82d1-45db-a53e-31de509a7759.jpg" />
+          <aside className={styles.aside}>RESERVATIONS, OPENINGS OR HOURS</aside>
           <br />
-        </div>
-      </div>
-
-      <div className={styles.row}>
-        <div className={styles.column}>
+          <p className={styles.p}>iykyk</p>
           <br />
-          <Accordion defaultValue={true} title={`How do I work with INTDEV at their office?`}>
-            <br />
-            You can find an application link below or by reaching out through social. Please note that the INTDEV reserved desks are invite-only and intended for those with a genuine interest in building things together.
-            <br />
-            <br />
-            <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
-              Apply on Users Garden
-            </ActionListItem>
-            <ActionListItem icon={`⊹`} href="https://users.garden" target="_blank">
-              Manage your account
-            </ActionListItem>
-            <ActionListItem icon={`⊹`} href="https://txt.dev/wwwjim/office-use-agreement" target="_blank">
-              Read our Office Use Agreement
-            </ActionListItem>
-            <br />
-            <br /> <br />
-          </Accordion>
           <br />
-        </div>
-      </div>
-
-      <div className={styles.row}>
-        <div className={styles.column}>
-          <br />
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/9c524b6a-855e-4329-88cd-7bb81796fcc2.jpg" />
           <br />
         </div>
       </div>
