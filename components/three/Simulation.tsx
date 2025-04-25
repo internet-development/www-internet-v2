@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+
 import * as THREE from 'three';
+
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export interface SimulationContext {
@@ -18,14 +20,16 @@ interface SimulationProps {
   cloudColorHex?: string;
   skyColorHex?: string;
   backgroundImageURL?: string;
+  backgroundVideoURL?: string;
   backgroundVertexShader?: string;
   backgroundFragmentShader?: string;
   children?: React.ReactNode;
   windEnabled?: boolean;
 }
 
-const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, backgroundImageURL, backgroundVertexShader, backgroundFragmentShader, children, windEnabled }) => {
+const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, backgroundImageURL, backgroundVideoURL, backgroundVertexShader, backgroundFragmentShader, children, windEnabled }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [simContext, setSimContext] = useState<SimulationContext | null>(null);
 
   useEffect(() => {
@@ -98,7 +102,26 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
       backgroundScene = new THREE.Scene();
       backgroundCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
       const textureLoader = new THREE.TextureLoader();
-      const bgTexture = backgroundImageURL ? textureLoader.load(backgroundImageURL) : null;
+
+      let bgTexture: THREE.Texture | null = null;
+      if (backgroundVideoURL) {
+        const video = document.createElement('video');
+        video.src = backgroundVideoURL;
+        video.crossOrigin = 'anonymous';
+        video.loop = true;
+        video.muted = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        videoRef.current = video;
+        video.play();
+        bgTexture = new THREE.VideoTexture(video);
+        bgTexture.minFilter = THREE.LinearFilter;
+        bgTexture.magFilter = THREE.LinearFilter;
+        bgTexture.format = THREE.RGBFormat;
+        video.addEventListener('ended', () => video.play());
+      } else if (backgroundImageURL) {
+        bgTexture = textureLoader.load(backgroundImageURL);
+      }
 
       shaderUniforms = {
         iTime: { value: 0 },
@@ -171,8 +194,13 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
       window.removeEventListener('keydown', onKeyDown);
       renderer.dispose();
       container.removeChild(renderer.domElement);
+      if (videoRef.current) {
+        videoRef.current.pause();
+        videoRef.current.src = '';
+        videoRef.current.load();
+      }
     };
-  }, [backgroundImageURL, backgroundVertexShader, backgroundFragmentShader, cloudColorHex, skyColorHex, windEnabled]);
+  }, [backgroundImageURL, backgroundVideoURL, backgroundVertexShader, backgroundFragmentShader, cloudColorHex, skyColorHex, windEnabled]);
 
   return (
     <div
