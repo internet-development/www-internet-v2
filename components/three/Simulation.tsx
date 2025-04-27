@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-
 import * as THREE from 'three';
-
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export interface SimulationContext {
@@ -31,6 +29,7 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [simContext, setSimContext] = useState<SimulationContext | null>(null);
+  const isGif = Boolean(backgroundImageURL && /\.(gif)(?:\?|$)/i.test(backgroundImageURL));
 
   useEffect(() => {
     const container = containerRef.current;
@@ -41,7 +40,7 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
     camera.position.set(0, 0, 1300);
     scene.add(camera);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.shadowMap.enabled = true;
@@ -82,28 +81,18 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
       if (index !== -1) simulationCallbacks.splice(index, 1);
     };
 
-    const context: SimulationContext = {
-      scene,
-      camera,
-      renderer,
-      controls,
-      windEnabled,
-      registerSimulationUpdate,
-      unregisterSimulationUpdate,
-    };
-
-    setSimContext(context);
+    setSimContext({ scene, camera, renderer, controls, windEnabled, registerSimulationUpdate, unregisterSimulationUpdate });
 
     let backgroundScene: THREE.Scene | undefined;
     let backgroundCamera: THREE.OrthographicCamera | undefined;
-    let shaderUniforms: { [uniform: string]: { value: any } } | undefined = undefined;
+    let shaderUniforms: Record<string, { value: any }> | undefined;
+    let bgTexture: THREE.Texture | null = null;
 
-    if (backgroundVertexShader && backgroundFragmentShader) {
+    if (!isGif && backgroundVertexShader && backgroundFragmentShader) {
       backgroundScene = new THREE.Scene();
       backgroundCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
       const textureLoader = new THREE.TextureLoader();
 
-      let bgTexture: THREE.Texture | null = null;
       if (backgroundVideoURL) {
         const video = document.createElement('video');
         video.src = backgroundVideoURL;
@@ -131,22 +120,15 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
         backgroundImage: { value: bgTexture },
       };
 
-      const shaderMaterial = new THREE.ShaderMaterial({
-        vertexShader: backgroundVertexShader,
-        fragmentShader: backgroundFragmentShader,
-        uniforms: shaderUniforms,
-        depthTest: false,
-        depthWrite: false,
-      });
-
+      const shaderMaterial = new THREE.ShaderMaterial({ vertexShader: backgroundVertexShader, fragmentShader: backgroundFragmentShader, uniforms: shaderUniforms, depthTest: false, depthWrite: false });
       const plane = new THREE.PlaneGeometry(2, 2);
-      const backgroundMesh = new THREE.Mesh(plane, shaderMaterial);
-      backgroundScene.add(backgroundMesh);
+      backgroundScene.add(new THREE.Mesh(plane, shaderMaterial));
     }
 
     const animate = (time: number) => {
       requestAnimationFrame(animate);
       simulationCallbacks.forEach((cb) => cb(time));
+      if (bgTexture && !(bgTexture instanceof THREE.VideoTexture)) bgTexture.needsUpdate = true;
       if (backgroundScene && backgroundCamera && shaderUniforms) {
         shaderUniforms.iTime.value = time * 0.001;
         renderer.autoClear = false;
@@ -165,23 +147,21 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
-      if (shaderUniforms) {
-        shaderUniforms.iResolution.value.set(container.clientWidth, container.clientHeight);
-      }
+      if (shaderUniforms) shaderUniforms.iResolution.value.set(container.clientWidth, container.clientHeight);
     };
 
     const onKeyDown = (e: KeyboardEvent) => {
       const zoomStep = 15;
       if (e.key === 'q') {
-        const direction = new THREE.Vector3();
-        camera.getWorldDirection(direction);
-        camera.position.addScaledVector(direction, -zoomStep);
+        const dir = new THREE.Vector3();
+        camera.getWorldDirection(dir);
+        camera.position.addScaledVector(dir, -zoomStep);
         controls.update();
       }
       if (e.key === 'w') {
-        const direction = new THREE.Vector3();
-        camera.getWorldDirection(direction);
-        camera.position.addScaledVector(direction, zoomStep);
+        const dir = new THREE.Vector3();
+        camera.getWorldDirection(dir);
+        camera.position.addScaledVector(dir, zoomStep);
         controls.update();
       }
     };
@@ -200,7 +180,7 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
         videoRef.current.load();
       }
     };
-  }, [backgroundImageURL, backgroundVideoURL, backgroundVertexShader, backgroundFragmentShader, cloudColorHex, skyColorHex, windEnabled]);
+  }, [backgroundImageURL, backgroundVideoURL, backgroundVertexShader, backgroundFragmentShader, cloudColorHex, skyColorHex, windEnabled, isGif]);
 
   return (
     <div
@@ -211,17 +191,12 @@ const Simulation: React.FC<SimulationProps> = ({ cloudColorHex, skyColorHex, bac
         height: 'calc(100dvh - 40px)',
         margin: 0,
         padding: 0,
+        backgroundImage: isGif && backgroundImageURL ? `url(${backgroundImageURL})` : undefined,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
-      {simContext &&
-        React.Children.map(children, (child) => {
-          if (React.isValidElement(child))
-            return React.cloneElement(child as React.ReactElement<any>, {
-              simulation: simContext,
-              parent: simContext.scene,
-            });
-          return child;
-        })}
+      {simContext && React.Children.map(children, (child) => (React.isValidElement(child) ? React.cloneElement(child as React.ReactElement<any>, { simulation: simContext, parent: simContext.scene }) : child))}
     </div>
   );
 };
