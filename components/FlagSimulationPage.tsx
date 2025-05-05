@@ -130,11 +130,11 @@ const backgroundFragmentShader = `
 `;
 
 const IMAGE_SOURCE = `https://assets.flagpost.org`;
-const BACKGROUND_IMAGE = `/bg.jpg`;
+const BACKGROUND_IMAGE = `/bg.png`;
 // backgroundVideoURL={BACKGROUND_VIDEO}
 // backgroundImageURL={BACKGROUND_IMAGE}
 
-const CARDS = [{ id: 0 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }, { id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }, { id: 14 }, { id: 15 }, { id: 16 }, { id: 17 }, { id: 18 }, { id: 19 }, { id: 20 }, { id: 21 }, { id: 22 }, { id: 23 }, { id: 24 }, { id: 25 }, { id: 26 }, { id: 27 }, { id: 28 }, { id: 29 }, { id: 30 }, { id: 31 }, { id: 32 }, { id: 33 }, { id: 34 }, { id: 35 }, { id: 36 }, { id: 37 }, { id: 38 }, { id: 39 }, { id: 40 }, { id: 41 }, { id: 42 }].reverse();
+const CARDS = [{ id: 0 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }, { id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }, { id: 14 }, { id: 15 }, { id: 16 }, { id: 17 }, { id: 18 }, { id: 19 }, { id: 20 }, { id: 21 }, { id: 22 }, { id: 23 }, { id: 24 }, { id: 25 }, { id: 26 }, { id: 27 }, { id: 28 }, { id: 29 }, { id: 30 }, { id: 31 }, { id: 32 }, { id: 33 }, { id: 34 }, { id: 35 }, { id: 36 }, { id: 37 }, { id: 38 }, { id: 39 }, { id: 40 }, { id: 41 }, { id: 42 }, { id: 43 }].reverse();
 
 export default function FlagSimulationPage(props) {
   const [currentTextureId, setCurrentTextureId] = React.useState(CARDS[0].id);
