@@ -135,7 +135,7 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6dcedf7d-82d1-45db-a53e-31de509a7759.jpg" />
+          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/txt-dev/c07fc786-93f0-4067-92f8-b1b8b390aa6f.jpg" />
           <br />
         </div>
       </div>
@@ -167,7 +167,7 @@ export default async function Page(props) {
       <div className={styles.row}>
         <div className={styles.column}>
           <br />
-          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/9c524b6a-855e-4329-88cd-7bb81796fcc2.jpg" />
+          <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/txt-dev/ac01dad9-3566-4761-9191-2b81dd018907.jpeg" />
           <br />
         </div>
       </div>
