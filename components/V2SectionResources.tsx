@@ -7,11 +7,20 @@ import { GRID_TYPES, RESOUCES_SIDEBAR_ITEMS } from '@root/content/resources-cont
 import PageGutter from './PageGutter';
 import Sidebar, { MobileSidebar } from './Sidebar';
 import Link from 'next/link';
+import FadeManager, { FadeManagerConfig } from './animations/FadeManager';
+import BlockFade from './animations/BlockFade';
 
 export default function V2SectionResources() {
   const sidebar = RESOUCES_SIDEBAR_ITEMS;
   const [selectedItem, setSelectedItem] = useState(sidebar[0]);
   const [selectedTab, setSelectedTab] = useState<any>(null);
+
+  let fadeConfig: FadeManagerConfig = {
+    delay: { initial: 0, interval: 0 },
+    duration: 2.0,
+    angle: Math.PI * 0.5,
+    distance: 200,
+  };
 
   const selectedNavTitle = selectedItem?.title || 'Resources';
 
@@ -67,30 +76,36 @@ export default function V2SectionResources() {
           <div className={styles.gridLarge}>
             {items?.map((subItem, subIndex) => {
               const content = (
-                <div key={subIndex}>
-                  {subItem?.img?.src && (
-                    <div className={styles.imageContainer}>
-                      <img src={subItem?.img?.src} className={styles.image} />
+                <BlockFade key={`large-${subIndex}`}>
+                  <div>
+                    {subItem?.img?.src && (
+                      <div className={styles.imageContainer}>
+                        <img src={subItem?.img?.src} className={styles.image} />
+                      </div>
+                    )}
+                    <div className={styles.itemText}>
+                      {subItem?.title && <h3 className={styles.itemTitle}>{subItem.title}</h3>}
+                      {subItem?.description && <p className={styles.itemDescription}>{subItem.description}</p>}
                     </div>
-                  )}
-                  <div className={styles.itemText}>
-                    {subItem?.title && <h3 className={styles.itemTitle}>{subItem.title}</h3>}
-                    {subItem?.description && <p className={styles.itemDescription}>{subItem.description}</p>}
                   </div>
-                </div>
+                </BlockFade>
               );
 
               if (subItem.href && subItem.href !== '#') {
                 return (
-                  <div className={styles.gridLargeColumn}>
-                    <Link href={subItem.href} key={subIndex} className={styles.gridItemLink} target="_blank">
+                  <div key={subIndex} className={styles.gridLargeColumn}>
+                    <Link href={subItem.href} className={styles.gridItemLink} target="_blank">
                       {content}
                     </Link>
                   </div>
                 );
               }
 
-              return content;
+              return (
+                <div key={subIndex} className={styles.gridLargeColumn}>
+                  {content}
+                </div>
+              );
             })}
           </div>
         );
@@ -105,15 +120,17 @@ export default function V2SectionResources() {
                   <div className={styles.listItems}>
                     {item?.items?.map((subItem, subIndex) => {
                       const content = (
-                        <li key={subIndex} className={styles.listItem}>
-                          <div className={styles.itemContent}>
-                            <span className={styles.number}>{String(subIndex + 1).padStart(2, '0')}</span>
-                            <span className={styles.itemTitle}>{subItem.title}</span>
-                          </div>
-                          <div className={styles.itemAuthor}>
-                            <p className={styles.author}>{subItem.author}</p>
-                          </div>
-                        </li>
+                        <BlockFade>
+                          <li key={subIndex} className={styles.listItem}>
+                            <div className={styles.itemContent}>
+                              <span className={styles.number}>{String(subIndex + 1).padStart(2, '0')}</span>
+                              <span className={styles.itemTitle}>{subItem.title}</span>
+                            </div>
+                            <div className={styles.itemAuthor}>
+                              <p className={styles.author}>{subItem.author}</p>
+                            </div>
+                          </li>
+                        </BlockFade>
                       );
 
                       if (subItem.href && subItem.href !== '#') {
@@ -133,37 +150,6 @@ export default function V2SectionResources() {
           </div>
         );
 
-      case GRID_TYPES.GRID_LARGE_FLEXIBLE:
-        return (
-          <div className={styles.gridLargeFlexible}>
-            {items?.map((subItem, subIndex) => {
-              const content = (
-                <div key={subIndex}>
-                  {subItem?.img?.src && (
-                    <div className={styles.imageFlexible}>
-                      <img src={subItem?.img?.src} className={styles.imageContained} />
-                    </div>
-                  )}
-                  <h3 className={styles.itemTitle}>{subItem.title}</h3>
-                  <p className={styles.itemDescription}>{subItem.description}</p>
-                </div>
-              );
-
-              if (subItem.href && subItem.href !== '#') {
-                return (
-                  <div className={styles.gridFlexibleColumn}>
-                    <Link href={subItem.href} key={subIndex} className={styles.gridItemLink} target="_blank">
-                      {content}
-                    </Link>
-                  </div>
-                );
-              }
-
-              return content;
-            })}
-          </div>
-        );
-
       default:
         return null;
     }
@@ -171,47 +157,49 @@ export default function V2SectionResources() {
 
   return (
     <PageGutter>
-      <div className={styles.container}>
-        <div className={styles.miniHeader}>
-          <div className={styles.logo}>
-            {/* <InternetDevelopmentArtsCraftsLogo height="50.5px" /> */}
-            <p className={styles.mainTitle}>Index</p>
-          </div>
-          <div className={styles.mobileSidebarContainer}>
-            <MobileSidebar items={sidebar} selectedItem={selectedItem} onItemSelect={handleSidebarSelect} />
-          </div>
-        </div>
-
-        <div className={styles.contentGrid}>
-          <div className={styles.sidebarContainer}>
-            <p className={styles.heading}>Resources</p>
-            <Sidebar items={sidebar} selectedItem={selectedItem} onItemSelect={handleSidebarSelect} />
+      <FadeManager {...fadeConfig}>
+        <div className={styles.container}>
+          <div className={styles.miniHeader}>
+            <div className={styles.logo}>
+              {/* <InternetDevelopmentArtsCraftsLogo height="50.5px" /> */}
+              <p className={styles.mainTitle}>Index</p>
+            </div>
+            <div className={styles.mobileSidebarContainer}>
+              <MobileSidebar items={sidebar} selectedItem={selectedItem} onItemSelect={handleSidebarSelect} />
+            </div>
           </div>
 
-          <div className={styles.contentList}>
-            <div>
-              {selectedNavTitle && <p className={styles.heading}>{selectedNavTitle}</p>}
+          <div className={styles.contentGrid}>
+            <div className={styles.sidebarContainer}>
+              <p className={styles.heading}>Resources</p>
+              <Sidebar items={sidebar} selectedItem={selectedItem} onItemSelect={handleSidebarSelect} />
+            </div>
 
-              {hasTabsSection && (
-                <div className={styles.tabContainer}>
-                  {selectedItem?.items?.map((item: any, index: number) => {
-                    if (!item.isTab) return null;
+            <div className={styles.contentList}>
+              <div>
+                {selectedNavTitle && <p className={styles.heading}>{selectedNavTitle}</p>}
 
-                    const isActive = selectedTab?.title === item.title || (!selectedTab && index === 0);
+                {hasTabsSection && (
+                  <div className={styles.tabContainer}>
+                    {selectedItem?.items?.map((item: any, index: number) => {
+                      if (!item.isTab) return null;
 
-                    return (
-                      <button key={index} className={`${styles.tab} ${isActive ? styles.tabActive : ''}`} onClick={() => handleTabSelect(item)}>
-                        {item.title}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-              <div className={styles.grid}>{renderGrid()}</div>
+                      const isActive = selectedTab?.title === item.title || (!selectedTab && index === 0);
+
+                      return (
+                        <button key={index} className={`${styles.tab} ${isActive ? styles.tabActive : ''}`} onClick={() => handleTabSelect(item)}>
+                          {item.title}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+                <div className={styles.grid}>{renderGrid()}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </FadeManager>
     </PageGutter>
   );
 }
