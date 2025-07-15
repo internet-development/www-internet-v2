@@ -1,0 +1,17 @@
+.container {
+  max-width: 1620px;
+  margin: 0 auto;
+  width: 100%;
+  padding-right: var(--page-gutter-desktop);
+  padding-left: var(--page-gutter-desktop);
+
+  @media (max-width: 1600px) {
+    max-width: 1820px;
+  }
+
+  @media (max-width: 1050px) {
+    max-width: 800px;
+    padding-left: var(--page-gutter-mobile);
+    padding-right: var(--page-gutter-mobile);
+  }
+}
