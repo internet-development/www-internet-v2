@@ -22,7 +22,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       lastUpdated: new Date().toISOString(),
     },
-    // Regenerate the page at most once every hour (3600 seconds) - Incremental Static Regeneration (ISR)
     revalidate: REGENERATE_TIME_IN_SECONDS,
   };
 };

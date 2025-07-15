@@ -343,11 +343,11 @@ export const RESOUCES_COMMUNITY_CONTENT = [
 
 export const UPCOMING_EVENTS_CONTENT = [
   {
-    title: 'Pottery Northwest: Clay Handbuilding Class',
+    title: 'Pottery Northwest: Clay Handbuilding Workshop',
     author: 'Aug 9, 2025',
     img: {
       src: 'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/oe/5228934f-53d4-4fd4-8be3-431cf1e31074.jpg',
-      alt: 'Pottery Northwest: Clay Handbuilding Class',
+      alt: 'Pottery Northwest: Clay Handbuilding Workshop',
     },
     href: 'https://lu.ma/u8biqjc0',
   },
