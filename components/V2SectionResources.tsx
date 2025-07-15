@@ -16,7 +16,7 @@ export default function V2SectionResources() {
   const [selectedTab, setSelectedTab] = useState<any>(null);
 
   let fadeConfig: FadeManagerConfig = {
-    delay: { initial: 0, interval: 0 },
+    delay: { initial: 0, interval: 0.01 },
     duration: 2.0,
     angle: Math.PI * 0.5,
     distance: 200,

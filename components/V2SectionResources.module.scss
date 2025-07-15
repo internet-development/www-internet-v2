@@ -130,14 +130,22 @@
 }
 
 .link{
-    background: none;
+    background: transparent;
     border-bottom: none;
     text-decoration: none;
 
     &:hover{
         color:var(--color-gray-50);
         transition: color 200ms ease;
-        background: none;
+        background: transparent;
+    }
+    
+    &:active{
+        background: transparent;
+    }
+    
+    &:focus{
+        background: transparent;
     }
 }
 
@@ -211,6 +219,18 @@
 .gridItemLink{
     text-decoration: none;
     background: transparent;
+
+   &:hover{
+        background: transparent;
+    }
+    
+    &:active{
+        background: transparent;
+    }
+    
+    &:focus{
+        background: transparent;
+    }
 }
 
 .tabContainer {
