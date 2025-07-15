@@ -17,7 +17,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sass": "1.89.0",
-    "three": "^0.175.0"
+    "three": "^0.175.0",
+    "twitter-api-v2": "^1.24.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.28",

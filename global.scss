@@ -133,7 +133,6 @@ ol li {
 }
 
 ul li:before {
-  content: ' ';
   display: inline-block;
   width: 1ch;
   height: 0;
@@ -318,6 +317,15 @@ body.font-use-sfmono-square {
 
 html,
 body {
+  
+  --type-scale-6: 47.776px; /* 2.986 * 16 */
+  --type-scale-5: 39.808px; /* 2.488 * 16 */
+  --type-scale-4: 23.04px; /* 1.44 * 16 */
+  --type-scale-3: 19.2px; /* 1.2 * 16 */
+  --type-scale-2: 16px; /* 1 * 16 */
+  --type-scale-1: 13.328px; /* 0.833 * 16 */
+  --type-scale-tiny: 14px;
+
   --color-black-100: rgba(0, 0, 0, 1);
   --color-black-100-1: rgba(0, 0, 0, 0.1);
   --color-black-100-2: rgba(0, 0, 0, 0.2);
@@ -456,7 +464,13 @@ body {
 
   --theme-text: var(--color-black-100);
   --theme-line-height-base: 1.25;
+  --theme-line-height-tiny: 1.2;
+
+  --font-size-tiny:12px;
   --font-size: 20px;
+
+  --page-gutter-desktop: 5.5rem;
+  --page-gutter-mobile: 1.5rem;
 
   --z-index-page: 1;
   --z-index-page-select: 3;
@@ -482,15 +496,15 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--theme-background);
+      background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--theme-border);
+     background: transparent;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-border);
+    background: transparent;
   }
 
   @media (max-width: 568px) {
