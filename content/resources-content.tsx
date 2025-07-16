@@ -157,6 +157,127 @@ export const RESOUCES_MOOD_GENERAL = [
     },
     href: 'https://www.are.na/www-jim/rpg-ui-01',
   },
+  {
+    description: 'Blog post template',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5102be37-f1fc-4e8d-8ffb-6c7cad8c6791.png',
+      alt: 'Blog template',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/post',
+  },
+  {
+    description: 'Scaled typography',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e7ded86b-9f8f-474d-8d8a-96991f41a72e.png',
+
+      alt: 'Tool Preview',
+    },
+    href: 'https://wireframes.internet.dev/examples/system/typography',
+  },
+  {
+    description: 'Windows connected',
+    img: {
+      src: 'https://i.ibb.co/HTRHFygF/example-1.gif',
+      alt: 'Tool Preview',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/windows-connected',
+  },
+  {
+    description: 'Data visualization graphs with D3',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/f2c20d58-2efe-4cd0-a3e7-f81f1537051d.png',
+      alt: 'Tool Preview',
+    },
+    href: 'https://wireframes.internet.dev/examples/system/data-visualization',
+  },
+  // {
+  //   description: 'Data visualization - histogram',
+  //   img: {
+  //     src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5f9fb416-6e98-4703-9b7d-0a0f9007dae7.png',
+  //     alt: 'Tool Preview',
+  //   },
+  //   href: 'https://wireframes.internet.dev/examples/system/data-visualization',
+  // },
+  {
+    description: 'Thread replies component',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/0680e877-fedd-4248-a506-544b40184663.png',
+      alt: 'Tool Preview',
+    },
+    href: 'https://wireframes.internet.dev/examples/features/threads',
+  },
+  {
+    description: 'Color palette',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/4d784b69-ebb5-4e29-9597-cd7a269602d0.png',
+      alt: 'Tool Preview',
+    },
+    href: 'https://wireframes.internet.dev/examples/system/colors',
+  },
+  {
+    description: 'Search bar',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/43451182-41d1-475b-a9ae-c7f31c687968.png',
+      alt: 'Tool Preview',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/modals-website-prompt',
+  },
+  {
+    description: 'Color picker',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/f6c3babe-8391-4a60-8fe8-2e6510cb9207.png',
+      alt: 'Color Picker',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/modals-color-picker',
+  },
+  {
+    description: 'Search view 2',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/2534f80a-354c-4f5f-ae56-2ee51203010d.png',
+      alt: 'Search View 2',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/search-2',
+  },
+  {
+    description: 'Windows with text',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/1a605d65-7bea-431e-9561-c28263e90faf.png',
+      alt: 'Windows with text',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/windows',
+  },
+  {
+    description: 'Bento layout dashboard',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/c7d73479-f946-426b-becc-2bf7b7018295.png',
+      alt: 'Bento layout',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/dashboard',
+  },
+  {
+    description: 'Button rainbow hover state',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/eb126fc1-3b64-44a2-b2c0-9280d8f24d30.png',
+      alt: 'Button rainbow hover state',
+    },
+    href: 'https://wireframes.internet.dev/examples/components/gradient-button',
+  },
+  {
+    description: 'Grid template wireframe',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/969053be-c9a8-4678-8043-e443aab4ecb8.png',
+      alt: 'Grid template wireframe',
+    },
+    href: 'https://wireframes.internet.dev/examples/empty/grid-template-page',
+  },
+  {
+    description: 'marble.place',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/b424905e-fdf4-48b4-81bb-accb5bc0b147.png',
+      alt: 'marble.place',
+    },
+    href: 'https://marble.place/',
+  },
 
   // {
   //   img: {
@@ -448,12 +569,6 @@ export const PAST_EVENTS_CONTENT = [
 
 export const RESOUCES_COMMUNITY = [
   {
-    title: 'Projects & Companies',
-    gridType: GRID_TYPES.GRID_LARGE,
-    isTab: true,
-    items: RESOUCES_COMMUNITY_CONTENT,
-  },
-  {
     title: 'Events',
     isTab: true,
     gridType: GRID_TYPES.GRID_READING_LIST,
@@ -468,6 +583,12 @@ export const RESOUCES_COMMUNITY = [
       },
     ],
   },
+  {
+    title: 'Projects & Companies',
+    gridType: GRID_TYPES.GRID_LARGE,
+    isTab: true,
+    items: RESOUCES_COMMUNITY_CONTENT,
+  },
 ];
 
 export const RESOUCES_SIDEBAR_ITEMS: ResourceItem[] = [
@@ -477,7 +598,12 @@ export const RESOUCES_SIDEBAR_ITEMS: ResourceItem[] = [
     gridType: GRID_TYPES.GRID_READING_LIST,
     items: READING_CONTENT,
   },
-
+  {
+    title: 'Mood',
+    href: '/resources#mood',
+    gridType: GRID_TYPES.GRID_LARGE,
+    items: RESOUCES_MOOD_GENERAL,
+  },
   {
     title: 'Websites',
     href: '/resources#design',
@@ -495,11 +621,5 @@ export const RESOUCES_SIDEBAR_ITEMS: ResourceItem[] = [
     href: '/resources#websites',
     gridType: GRID_TYPES.GRID_LARGE,
     items: RESOUCES_COMMUNITY,
-  },
-  {
-    title: 'Mood',
-    href: '/resources#mood',
-    gridType: GRID_TYPES.GRID_LARGE,
-    items: RESOUCES_MOOD_GENERAL,
   },
 ];
