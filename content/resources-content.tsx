@@ -123,7 +123,8 @@ export const RESOUCES_TOOLS_CONTENT = [
     title: 'Diagram.page',
     description: 'A simple tool for creating diagrams and flowcharts.',
     img: {
-      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5e4d5df2-bd8a-431e-b48c-0869b12f24b4.png',
+      // src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5e4d5df2-bd8a-431e-b48c-0869b12f24b4.png',
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/f33bdc4c-e9f3-429d-87d0-3c2c2cc5d782.png',
       alt: 'Diagram Page',
     },
     href: 'https://diagram.page/',
@@ -132,7 +133,8 @@ export const RESOUCES_TOOLS_CONTENT = [
     title: 'Next.js Offline Whisper to LLM',
     description: 'An offline-first, browser-based application that allows users to locally transcribe audio recordings into accurate, plain-text transcripts.',
     img: {
-      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/60bb1449-97f4-44ba-8348-3fbf47de0ba2.png',
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/ffc97c2c-74a9-4982-a781-8b6cb49f6e90.png',
+      // src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/60bb1449-97f4-44ba-8348-3fbf47de0ba2.png',
       alt: 'Next.js Offline Whisper to LLM',
     },
     href: 'https://github.com/internet-development/nextjs-offline-whisper-to-llm',
@@ -605,16 +607,16 @@ export const RESOUCES_SIDEBAR_ITEMS: ResourceItem[] = [
     items: RESOUCES_MOOD_GENERAL,
   },
   {
-    title: 'Websites',
-    href: '/resources#design',
-    gridType: GRID_TYPES.GRID_LARGE,
-    items: RESOUCES_WEBSITES_CONTENT,
-  },
-  {
     title: 'Tools',
     href: '/resources#tools',
     gridType: GRID_TYPES.GRID_LARGE,
     items: RESOUCES_TOOLS_CONTENT,
+  },
+  {
+    title: 'Websites',
+    href: '/resources#design',
+    gridType: GRID_TYPES.GRID_LARGE,
+    items: RESOUCES_WEBSITES_CONTENT,
   },
   {
     title: 'Community',
