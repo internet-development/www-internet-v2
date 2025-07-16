@@ -380,3 +380,44 @@ export const findFocusableDescendant = (container: Element | null, currentFocuse
 
   return null;
 };
+
+export function createPageMetadata(overrides: { title?: string; description?: string; url?: string; image?: string }) {
+  const defaults = {
+    title: 'Internet Development',
+    description: 'Internet Development Studios',
+    url: 'https://internet.dev',
+    handle: '@internetxstudio',
+    image: 'https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png',
+  };
+
+  const metadata = { ...defaults, ...overrides };
+
+  return {
+    ...metadata,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      url: metadata.url,
+      type: 'website' as const,
+      images: [
+        {
+          url: metadata.image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: metadata.title,
+      description: metadata.description,
+      handle: metadata.handle,
+      images: [metadata.image],
+      url: metadata.url,
+    },
+    icons: {
+      icon: '/favicon-32x32.png',
+      shortcut: '/favicon-16x16.png',
+    },
+  };
+}
