@@ -16,7 +16,7 @@ const metadata = createPageMetadata({
   title: 'Resources - Internet Development',
   description: 'Curated collection of design resources, reading lists, tools, and community content for developers and designers.',
   url: 'https://internet.dev/resources',
-  image: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/resources-og-image.png',
+  image: 'https://next-s3-public.s3.us-west-2.amazonaws.com/internet-dev/intdev.png',
 });
 
 export default function Page({ lastUpdated }: PageProps) {
