@@ -150,11 +150,15 @@
 }
 
 .imageContainer{
-   height: 230px;
+   height: 100%;
    padding-bottom: 0.8rem;
 
+   @media (max-width:1800px) {
+      height:230px;
+   }
+
    @media (max-width:1050px) {
-    height: 200px;
+      height: 200px;
    }
 
    @media (max-width:768px) {

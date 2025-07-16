@@ -1,25 +1,27 @@
 'use client';
+
 import styles from '@components/V2SectionResources.module.scss';
 
 import React, { useState } from 'react';
 
 import { GRID_TYPES, RESOUCES_SIDEBAR_ITEMS } from '@root/content/resources-content';
+import BlockFade from './animations/BlockFade';
+import FadeManager, { FadeManagerConfig } from './animations/FadeManager';
+import Link from 'next/link';
 import PageGutter from './PageGutter';
 import Sidebar, { MobileSidebar } from './Sidebar';
-import Link from 'next/link';
-import FadeManager, { FadeManagerConfig } from './animations/FadeManager';
-import BlockFade from './animations/BlockFade';
 
 export default function V2SectionResources() {
   const sidebar = RESOUCES_SIDEBAR_ITEMS;
   const [selectedItem, setSelectedItem] = useState(sidebar[0]);
   const [selectedTab, setSelectedTab] = useState<any>(null);
+  const [nonce, setNonce] = useState(0);
 
   let fadeConfig: FadeManagerConfig = {
-    delay: { initial: 0, interval: 0.01 },
-    duration: 2.0,
-    angle: Math.PI * 0.5,
-    distance: 200,
+    delay: { initial: 0, interval: 0.1 },
+    duration: 1.0,
+    angle: 0,
+    distance: 50,
   };
 
   const selectedNavTitle = selectedItem?.title || 'Resources';
@@ -27,10 +29,12 @@ export default function V2SectionResources() {
   const handleSidebarSelect = (item: any) => {
     setSelectedItem(item);
     setSelectedTab(null);
+    setNonce((prev) => prev + 1);
   };
 
   const handleTabSelect = (tab: any) => {
     setSelectedTab(tab);
+    setNonce((prev) => prev + 1);
   };
 
   const hasTabsSection = selectedItem?.items?.some((item: any) => item.isTab);
@@ -80,7 +84,7 @@ export default function V2SectionResources() {
                   <div>
                     {subItem?.img?.src && (
                       <div className={styles.imageContainer}>
-                        <img src={subItem?.img?.src} className={styles.image} />
+                        <img src={subItem?.img?.src} className={styles.image} loading="lazy" />
                       </div>
                     )}
                     <div className={styles.itemText}>
@@ -120,8 +124,8 @@ export default function V2SectionResources() {
                   <div className={styles.listItems}>
                     {item?.items?.map((subItem, subIndex) => {
                       const content = (
-                        <BlockFade>
-                          <li key={subIndex} className={styles.listItem}>
+                        <BlockFade key={`large-${subIndex}`}>
+                          <li className={styles.listItem}>
                             <div className={styles.itemContent}>
                               <span className={styles.number}>{String(subIndex + 1).padStart(2, '0')}</span>
                               <span className={styles.itemTitle}>{subItem.title}</span>
@@ -157,7 +161,7 @@ export default function V2SectionResources() {
 
   return (
     <PageGutter>
-      <FadeManager {...fadeConfig}>
+      <FadeManager key={nonce} {...fadeConfig}>
         <div className={styles.container}>
           <div className={styles.miniHeader}>
             <div className={styles.logo}>
@@ -194,6 +198,7 @@ export default function V2SectionResources() {
                     })}
                   </div>
                 )}
+
                 <div className={styles.grid}>{renderGrid()}</div>
               </div>
             </div>
