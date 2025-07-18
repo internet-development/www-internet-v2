@@ -160,6 +160,14 @@ export const RESOUCES_MOOD_GENERAL = [
     href: 'https://www.are.na/www-jim/rpg-ui-01',
   },
   {
+    description: 'My Learning Journey: Fonts and Typography',
+    img: {
+      src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/txt-dev/805fd3e0-f6f4-4fa6-b1e3-c11f5524e972.svg',
+      alt: 'Tool Preview',
+    },
+    href: 'https://txt.dev/caidan/my-learning-journey-fonts-and-typography',
+  },
+  {
     description: 'Blog post template',
     img: {
       src: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/5102be37-f1fc-4e8d-8ffb-6c7cad8c6791.png',
