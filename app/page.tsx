@@ -707,6 +707,9 @@ export default async function Page(props) {
         <div className={styles.column}>
           <br />
           <img className={styles.image} src="https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/2fb7e012-4fa9-4446-9bf4-e2c5c7e4992a.jpg" />
+          <ActionListItem icon={`⊹`} href="https://company.internet.dev/" target="_blank">
+            Acquire us
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://wireframes.internet.dev/" target="_blank">
             Explore INTDEV's open source work
           </ActionListItem>
@@ -721,9 +724,6 @@ export default async function Page(props) {
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://www.instagram.com/internetdevelopmentstudio/" target="_blank">
             Follow us on Instagram
-          </ActionListItem>
-          <ActionListItem icon={`⊹`} href="https://read.cv/teams/intdev" target="_blank">
-            Follow us on Read.cv
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://x.com/internetxstudio" target="_blank">
             Follow us on X
