@@ -221,27 +221,27 @@ export default async function Page(props) {
             <Table>
               <TableRow>
                 <TableColumn>ONE MONTH</TableColumn>
-                <TableColumn>$70,000 USD</TableColumn>
+                <TableColumn>$122,000 USD</TableColumn>
               </TableRow>
 
               <TableRow>
                 <TableColumn>THREE MONTHS</TableColumn>
-                <TableColumn>$195,000 USD</TableColumn>
+                <TableColumn>$306,000 USD</TableColumn>
               </TableRow>
 
               <TableRow>
                 <TableColumn>SIX MONTHS</TableColumn>
-                <TableColumn>$360,000 USD</TableColumn>
+                <TableColumn>$557,000 USD</TableColumn>
               </TableRow>
 
               <TableRow>
                 <TableColumn>NINE MONTHS</TableColumn>
-                <TableColumn>$495,000 USD</TableColumn>
+                <TableColumn>$759,000 USD</TableColumn>
               </TableRow>
 
               <TableRow>
                 <TableColumn>TWELVE MONTHS</TableColumn>
-                <TableColumn>$600,000 USD</TableColumn>
+                <TableColumn>$920,000 USD</TableColumn>
               </TableRow>
             </Table>
             <br />
