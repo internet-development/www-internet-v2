@@ -1,13 +1,10 @@
 # www-internet-v2
 
-TODO
-
 ```sh
-npm install
-npm run dev
+make
 ```
 
-Go to `http://localhost:10000` in your browser of choice.
+Go to `http://localhost:10000` in your browser.
 
 ### Contact
 
