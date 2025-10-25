@@ -110,6 +110,9 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="/office">
             Learn more about the Pike Place office
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://company.internet.dev" target="_blank">
+            Learn our history
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://www.beautifulthings.xyz/" target="_blank">
             Look at beautiful things
           </ActionListItem>
@@ -139,7 +142,7 @@ export default async function Page(props) {
             We provide a team you can hire to get things done.
             <br />
             <br />
-            That team is a 6 person dedicated tiger team specializing in delivering high-performance web applications, internal tools, branding assets, presentations, static websites, LLM interfaces, illustrations, productivity applications, technical writing, and general web development services. By embedding with up to four companies at a time, we allocate a shared bandwidth of 360 hours per week to drive productivity and deliver results. It’s a process we genuinely enjoy, and every major milestone we knock out helps us grow and learn.
+            That team is a 7 person dedicated tiger team specializing in delivering high-performance web applications, internal tools, branding assets, presentations, static websites, LLM interfaces, illustrations, productivity applications, technical writing, and general web development services. By embedding with up to four companies at a time, we allocate a shared bandwidth of 360 hours per week to drive productivity and deliver results. It’s a process we genuinely enjoy, and every major milestone we knock out helps us grow and learn.
             <br />
             <br />
             We also provide an invite-only space in Seattle for people to work alongside us, offering a collaborative environment that also serves the portfolio venture companies of{' '}
@@ -154,6 +157,9 @@ export default async function Page(props) {
             </ActionListItem>
             <ActionListItem icon={`⊹`} href="https://t.me/internetdevelopmentstudio" target="_blank">
               Get our attention on Telegram
+            </ActionListItem>
+            <ActionListItem icon={`⊹`} href="https://company.internet.dev" target="_blank">
+              Learn our history
             </ActionListItem>
             <br />
             <br />
@@ -182,7 +188,7 @@ export default async function Page(props) {
           <br />
           <Accordion defaultValue={true} title={`Who is INTDEV working for in 2025?`}>
             <br />
-            Microsoft, Discord, and various startups.
+            Microsoft, Discord, Bluesky, and various startups.
             <br />
             <br />
             <br />
@@ -204,6 +210,9 @@ export default async function Page(props) {
             <br />
             <ActionListItem icon={`⊹`} href="https://t.me/internetdevelopmentstudio" target="_blank">
               Get our attention on Telegram
+            </ActionListItem>
+            <ActionListItem icon={`⊹`} href="https://company.internet.dev" target="_blank">
+              Learn our history
             </ActionListItem>
             <br />
             <br />
@@ -736,6 +745,9 @@ export default async function Page(props) {
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="/office">
             Learn more about the Pike Place office
+          </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://company.internet.dev" target="_blank">
+            Learn our history
           </ActionListItem>
           <ActionListItem icon={`⊹`} href="/cards" target="_blank">
             Look at flag posts

@@ -1,7 +1,7 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
 import * as Server from '@common/server';
-import * as Constants from '@common/constants';
 
-export default async function apiIndex(req, res) {
+export default async function apiIndex(req: NextApiRequest, res: NextApiResponse) {
   await Server.cors(req, res);
 
   res.json({
@@ -9,3 +9,7 @@ export default async function apiIndex(req, res) {
     message: 'hey there, friend.',
   });
 }
+
+export const config = {
+  api: {},
+};
