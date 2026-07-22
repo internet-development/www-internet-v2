@@ -271,6 +271,9 @@ export default async function Page(props) {
           <ActionListItem icon={`⊹`} href="https://txt.dev/wwwjim/intdev-terms-of-service" target="_blank">
             Read our Terms of Use
           </ActionListItem>
+          <ActionListItem icon={`⊹`} href="https://terminalgraph.com" target="_blank">
+            Try our new flagship product out at terminalgraph.com
+          </ActionListItem>
           <ActionListItem icon={`⊹`} href="https://github.com/internet-development/www-internet-v2" target="_blank">
             View source
           </ActionListItem>
